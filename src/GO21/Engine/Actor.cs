@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 
-namespace Engine
+namespace GO21Engine
 {
     public class Actor
     {
@@ -30,6 +30,9 @@ namespace Engine
         /// The position of the actor.
         /// </summary>
         public Vector2 Position;
+        /// <summary>
+        /// The X component of the position of this Actor.
+        /// </summary>
         public float X
         {
             get
@@ -41,6 +44,9 @@ namespace Engine
                 Position.X = value;
             }
         }
+        /// <summary>
+        /// The Y component of the position of this Actor.
+        /// </summary>
         public float Y
         {
             get

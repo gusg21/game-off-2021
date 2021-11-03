@@ -1,9 +1,11 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Runtime;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Engine
+namespace GO21Engine
 {
     /// <summary>
     /// The Engine class represents the core of the game. You load custom scenes
@@ -93,6 +95,24 @@ namespace Engine
         /// If this value is greater than zero, the game will pause and count down this timer.
         /// </summary>
         public static float FreezeTimer;
+        /// <summary>
+        /// Total count of frames 
+        /// </summary>
+        public static int Frames;
+
+        // == Content ==
+
+        /// <summary>
+        /// The directory that the executable is located in.
+        /// </summary>
+        private static string AssemblyDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+        /// <summary>
+        /// The directory that the Content for the game is located in.
+        /// </summary>
+        public static string ContentDirectory
+        {
+            get { return Path.Combine(AssemblyDirectory, Instance.Content.RootDirectory); }
+        }
 
         // == Util ==
 
@@ -201,7 +221,8 @@ namespace Engine
             // Switch scenes out if needed
             if (_scene != _nextScene)
             {
-                _scene.SceneEnd();
+                if (_scene != null)
+                    _scene.SceneEnd();
                 _scene = _nextScene;
 
                 GC.Collect();
@@ -211,6 +232,17 @@ namespace Engine
             }
 
             base.Update(gameTime);
+        }
+
+        /// <summary>
+        /// Draw the engine. Called every frame.
+        /// </summary>
+        /// <param name="gameTime">The game's timing information.</param>
+        protected override void Draw(GameTime gameTime)
+        {
+
+
+            base.Draw(gameTime);
         }
     }
 }

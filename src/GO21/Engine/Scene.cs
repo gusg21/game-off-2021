@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 
-namespace Engine
+namespace GO21Engine
 {
     public class Scene
     {
@@ -60,7 +60,7 @@ namespace Engine
             Actors.Draw();
         }
 
-        public void BeforeUpdate()
+        public virtual void BeforeUpdate()
         {
             if (!Paused)
                 TimeActive += Engine.DeltaTime;
@@ -69,17 +69,17 @@ namespace Engine
             Actors.BeforeUpdate();
         }
 
-        public void AfterUpdate()
+        public virtual void AfterUpdate()
         {
             Actors.AfterUpdate();
         }
 
-        public void BeforeDraw()
+        public virtual void BeforeDraw()
         {
             Actors.BeforeDraw();
         }
 
-        public void AfterDraw()
+        public virtual void AfterDraw()
         {
             Actors.AfterDraw();
         }

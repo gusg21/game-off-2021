@@ -3,3 +3,8 @@
 /Users/gus/Projects/game-off-2021/src/GO21/Engine/obj/Debug/netstandard2.0/Engine.AssemblyInfoInputs.cache
 /Users/gus/Projects/game-off-2021/src/GO21/Engine/obj/Debug/netstandard2.0/Engine.AssemblyInfo.cs
 /Users/gus/Projects/game-off-2021/src/GO21/Engine/obj/Debug/netstandard2.0/Engine.csproj.CoreCompileInputs.cache
+/Users/gus/Projects/game-off-2021/src/GO21/Engine/bin/Debug/netstandard2.0/Engine.deps.json
+/Users/gus/Projects/game-off-2021/src/GO21/Engine/bin/Debug/netstandard2.0/Engine.dll
+/Users/gus/Projects/game-off-2021/src/GO21/Engine/bin/Debug/netstandard2.0/Engine.pdb
+/Users/gus/Projects/game-off-2021/src/GO21/Engine/obj/Debug/netstandard2.0/Engine.dll
+/Users/gus/Projects/game-off-2021/src/GO21/Engine/obj/Debug/netstandard2.0/Engine.pdb

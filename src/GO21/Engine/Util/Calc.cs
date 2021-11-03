@@ -12,7 +12,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Engine
+namespace GO21Engine
 {
     public static class Calc
     {
@@ -2106,36 +2106,6 @@ namespace Engine
             while ((int)(ch = stream.ReadChar()) != 0)
                 str = str + ch;
             return str;
-        }
-
-        public static IEnumerator Do(params IEnumerator[] numerators)
-        {
-            if (numerators.Length == 0)
-                yield break;
-            else if (numerators.Length == 1)
-                yield return numerators[0];
-            else
-            {
-                List<Coroutine> routines = new List<Coroutine>();
-                foreach (var enumerator in numerators)
-                    routines.Add(new Coroutine(enumerator));
-
-                while (true)
-                {
-                    bool moving = false;
-                    foreach (var routine in routines)
-                    {
-                        routine.Update();
-                        if (!routine.Finished)
-                            moving = true;
-                    }
-
-                    if (moving)
-                        yield return null;
-                    else
-                        break;
-                }
-            }
         }
 
         public static Rectangle ClampTo(this Rectangle rect, Rectangle clamp)
