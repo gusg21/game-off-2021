@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{1DB45BF2-0DA6-46F1-937D-CD80E2D5BE1E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Engine/ActorList.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Engine/Actor.cs">
     <Files>
-      <File FileName="Engine/Scene.cs" Line="46" Column="13" />
-      <File FileName="Engine/Actor.cs" Line="7" Column="1" />
-      <File FileName="Engine/IEngineEvents.cs" Line="6" Column="22" />
-      <File FileName="Engine/ActorList.cs" Line="38" Column="13" />
+      <File FileName="Engine/Scene.cs" Line="62" Column="1" />
+      <File FileName="Engine/Actor.cs" Line="6" Column="1" />
+      <File FileName="Engine/ActorList.cs" Line="8" Column="36" />
+      <File FileName="Engine/Engine.cs" Line="8" Column="1" />
+      <File FileName="Game/Program.cs" Line="11" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +13,7 @@
           <Node name="GO21" expanded="True">
             <Node name="Engine" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="ActorList.cs" selected="True" />
+              <Node name="Actor.cs" selected="True" />
             </Node>
             <Node name="Game" expanded="True">
               <Node name="Dependencies" expanded="True" />
@@ -23,7 +24,6 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Game FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.ItemProperties.Engine FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
