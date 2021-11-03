@@ -7,8 +7,7 @@ namespace Game
         [STAThread]
         static void Main()
         {
-            using (var game = new Game1())
-                game.Run();
+            Engine.Engine engine = new Engine.Engine(320, 240, 4, "game");
         }
     }
 }

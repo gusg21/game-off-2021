@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{1DB45BF2-0DA6-46F1-937D-CD80E2D5BE1E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Engine/Actor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Engine/Scene.cs">
     <Files>
-      <File FileName="Engine/Scene.cs" Line="62" Column="1" />
-      <File FileName="Engine/Actor.cs" Line="6" Column="1" />
-      <File FileName="Engine/ActorList.cs" Line="8" Column="36" />
-      <File FileName="Engine/Engine.cs" Line="8" Column="1" />
-      <File FileName="Game/Program.cs" Line="11" Column="26" />
+      <File FileName="Engine/Scene.cs" Line="104" Column="44" />
+      <File FileName="Engine/Actor.cs" Line="15" Column="81" />
+      <File FileName="Engine/ActorList.cs" Line="12" Column="36" />
+      <File FileName="Engine/Engine.cs" Line="191" Column="71" />
+      <File FileName="Game/Program.cs" Line="10" Column="73" />
+      <File FileName="Engine/Util/Calc.cs" Line="20" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +14,8 @@
           <Node name="GO21" expanded="True">
             <Node name="Engine" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="Actor.cs" selected="True" />
+              <Node name="Util" expanded="True" />
+              <Node name="Scene.cs" selected="True" />
             </Node>
             <Node name="Game" expanded="True">
               <Node name="Dependencies" expanded="True" />
