@@ -9,8 +9,8 @@ namespace Game
         [STAThread]
         static void Main()
         {
-            GO21Engine.Engine engine = new GO21Engine.Engine(320, 240, 4, "game");
-            GO21Engine.Engine.Scene = new PlayScene();
+            Engine engine = new Engine(320, 240, 3, "game");
+            Engine.Scene = new PlayScene();
             engine.Run();
         }
     }

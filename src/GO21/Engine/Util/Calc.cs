@@ -12,7 +12,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace GO21Engine
+namespace GO21Engine.Util
 {
     public static class Calc
     {

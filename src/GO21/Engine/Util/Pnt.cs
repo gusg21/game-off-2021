@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GO21Engine
+namespace GO21Engine.Util
 {
     public struct Pnt
     {

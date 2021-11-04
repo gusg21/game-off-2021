@@ -2,7 +2,9 @@
 using System.IO;
 using System.Reflection;
 using System.Runtime;
+using GO21Engine.Util;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace GO21Engine
@@ -23,6 +25,14 @@ namespace GO21Engine
         /// The GraphicsDeviceManager for the game.
         /// </summary>
         public static GraphicsDeviceManager Graphics;
+        /// <summary>
+        /// The Drawing subsystem for textures and primitives.
+        /// </summary>
+        public static Drawing Drawing;
+        /// <summary>
+        /// The Camera to render the game through.
+        /// </summary>
+        public static Camera Camera;
 
         // == Window ==
 
@@ -43,9 +53,9 @@ namespace GO21Engine
         /// </summary>
         public static int Scale;
         /// <summary>
-        /// How wide the window should be. Dynamically calculated based on <see cref="Width"/> and <see cref="Scale"/>.
+        /// How wide the internal "screen" should be when rendered.
         /// </summary>
-        public static int WindowWidth
+        public static int ScreenWidth
         {
             get
             {
@@ -60,9 +70,9 @@ namespace GO21Engine
             }
         }
         /// <summary>
-        /// How tall the window should be. Dynamically calculated based on <see cref="Height"/> and <see cref="Scale"/>.
+        /// How tall the internal "screen" should be when rendered.
         /// </summary>
-        public static int WindowHeight
+        public static int ScreenHeight
         {
             get
             {
@@ -74,6 +84,26 @@ namespace GO21Engine
                 {
                     return Height * Scale;
                 }
+            }
+        }
+        /// <summary>
+        /// Get the actual width of the window.
+        /// </summary>
+        public static int WindowWidth
+        {
+            get
+            {
+                return Instance.GraphicsDevice.PresentationParameters.BackBufferWidth;
+            }
+        }
+        /// <summary>
+        /// Get the height of the window.
+        /// </summary>
+        public static int WindowHeight
+        {
+            get
+            {
+                return Instance.GraphicsDevice.PresentationParameters.BackBufferHeight;
             }
         }
 
@@ -98,7 +128,7 @@ namespace GO21Engine
         /// <summary>
         /// Total count of frames 
         /// </summary>
-        public static int Frames;
+        public static int Frames { get; private set; }
 
         // == Content ==
 
@@ -162,12 +192,15 @@ namespace GO21Engine
             Scale = scale;
             Title = Window.Title = title;
 
-            // Graphics device setup
+            // Camera
+            Camera = new Camera();
+
+            // Content
+            Content.RootDirectory = "Content";
+
+            // Graphics
             Graphics = new GraphicsDeviceManager(this);
             {
-                Graphics.PreferredBackBufferWidth = WindowWidth;
-                Graphics.PreferredBackBufferHeight = WindowHeight;
-
                 Graphics.SynchronizeWithVerticalRetrace = true;
                 Graphics.PreferMultiSampling = false;
                 Graphics.GraphicsProfile = GraphicsProfile.HiDef;
@@ -176,6 +209,13 @@ namespace GO21Engine
             }
             Graphics.ApplyChanges();
 
+            Console.WriteLine("w " + ScreenWidth + " h " + ScreenHeight);
+            Graphics.IsFullScreen = false;
+            Graphics.PreferredBackBufferWidth = ScreenWidth;
+            Graphics.PreferredBackBufferHeight = ScreenHeight;
+            Graphics.ApplyChanges();
+
+            // Window
             Window.AllowUserResizing = true;
             Window.ClientSizeChanged += OnClientSizeChanged;
 
@@ -188,11 +228,26 @@ namespace GO21Engine
             GCSettings.LatencyMode = GCLatencyMode.SustainedLowLatency;
         }
 
+        #region Callbacks
+
         // Called when the window is resized.
         protected void OnClientSizeChanged(object sender, EventArgs e)
         {
             Graphics.PreferredBackBufferWidth = Window.ClientBounds.Width;
             Graphics.PreferredBackBufferHeight = Window.ClientBounds.Height;
+        }
+
+        #endregion
+
+        #region Game Loop
+
+        protected override void Initialize()
+        {
+            // Drawing
+            Drawing = new Drawing(GraphicsDevice, Width, Height);
+            Drawing.Initialize();
+
+            base.Initialize();
         }
 
         /// <summary>
@@ -240,9 +295,56 @@ namespace GO21Engine
         /// <param name="gameTime">The game's timing information.</param>
         protected override void Draw(GameTime gameTime)
         {
+            if (_scene != null)
+                _scene.BeforeDraw();
 
+            GraphicsDevice.SetRenderTarget(null); // render to window
+            GraphicsDevice.Clear(ClearColor);
+
+            Drawing.Begin(Camera.Matrix);
+
+            if (_scene != null)
+            {
+                _scene.Draw();
+                _scene.AfterDraw();
+            }
+
+            Drawing.End();
+
+#if DEBUG
+            Window.Title = Title + " " + Math.Floor(1.0f / gameTime.ElapsedGameTime.TotalSeconds) + " avg fps - " + (GC.GetTotalMemory(false) / 1048576f).ToString("F") + " MB";
+#endif
+
+            Frames++;
 
             base.Draw(gameTime);
         }
+
+        #endregion
+
+        #region Shortcuts
+
+        /// <summary>
+        /// A shortcut to Engine.Instance.Content.LoadContent<T>().
+        /// </summary>
+        /// <typeparam name="T">The type of asset to load.</typeparam>
+        /// <param name="assetName">The name of the asset (no extension) to load.</param>
+        /// <returns>The loaded asset.</returns>
+        public static T Load<T>(string assetName)
+        {
+            return Instance.Content.Load<T>(assetName);
+        }
+
+        /// <summary>
+        /// A shortcut for <see cref="Load{T}(string)"/> for specifically Texture2Ds.
+        /// </summary>
+        /// <param name="texName">The name of the Texture2D to load (no extension).</param>
+        /// <returns>The Texture2D.</returns>
+        public static Texture2D LoadTex(string texName)
+        {
+            return Load<Texture2D>(texName);
+        }
+
+        #endregion
     }
 }
