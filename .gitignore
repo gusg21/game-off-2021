@@ -390,3 +390,4 @@ FodyWeavers.xsd
 # extras
 UserPrefs.xml
 *Debug.json
+.DS_Store
