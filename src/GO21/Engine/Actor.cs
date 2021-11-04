@@ -89,22 +89,22 @@ namespace GO21Engine
         /// <summary>
         /// Happens just before <see cref="Update"/>.
         /// </summary>
-        public void BeforeUpdate() { }
+        public virtual void BeforeUpdate() { }
 
         /// <summary>
         /// Happens just after <see cref="Update"/>.
         /// </summary>
-        public void AfterUpdate() { }
+        public virtual void AfterUpdate() { }
 
         /// <summary>
         /// Happens just before <see cref="Draw"/>.
         /// </summary>
-        public void BeforeDraw() { }
+        public virtual void BeforeDraw() { }
 
         /// <summary>
         /// Happens just after <see cref="Draw"/>.
         /// </summary>
-        public void AfterDraw() { }
+        public virtual void AfterDraw() { }
 
         #endregion
     }
