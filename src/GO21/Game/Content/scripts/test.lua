@@ -1,4 +1,5 @@
-import("GO21Engine")
-import("GO21Engine.Engine")
+local tex = EI:LoadTex("penguin")
 
-print("Engine: " .. Engine)
+function Draw()
+    EI.Drawing:Texture(tex, 10, 10)
+end

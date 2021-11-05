@@ -10,7 +10,7 @@ namespace Game
         static void Main()
         {
             Engine engine = new Engine(320, 240, 3, "game");
-            Engine.Scene = new PlayScene();
+            engine.Scene = new PlayScene();
             engine.Run();
         }
     }

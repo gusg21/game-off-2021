@@ -82,8 +82,8 @@ namespace GO21Engine
         public virtual void BeforeUpdate()
         {
             if (!Paused)
-                TimeActive += Engine.DeltaTime;
-            RawTimeActive += Engine.RawDeltaTime;
+                TimeActive += Engine.Instance.DeltaTime;
+            RawTimeActive += Engine.Instance.RawDeltaTime;
 
             Actors.BeforeUpdate();
         }
@@ -114,7 +114,7 @@ namespace GO21Engine
         /// <returns></returns>
         public bool OnInterval(float interval)
         {
-            return (int)((TimeActive - Engine.DeltaTime) / interval) < (int)(TimeActive / interval);
+            return (int)((TimeActive - Engine.Instance.DeltaTime) / interval) < (int)(TimeActive / interval);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace GO21Engine
         /// <returns></returns>
         public bool OnInterval(float interval, float offset)
         {
-            return Math.Floor((TimeActive - offset - Engine.DeltaTime) / interval) < Math.Floor((TimeActive - offset) / interval);
+            return Math.Floor((TimeActive - offset - Engine.Instance.DeltaTime) / interval) < Math.Floor((TimeActive - offset) / interval);
         }
 
         public bool BetweenInterval(float interval)
@@ -134,12 +134,12 @@ namespace GO21Engine
 
         public bool OnRawInterval(float interval)
         {
-            return (int)((RawTimeActive - Engine.RawDeltaTime) / interval) < (int)(RawTimeActive / interval);
+            return (int)((RawTimeActive - Engine.Instance.RawDeltaTime) / interval) < (int)(RawTimeActive / interval);
         }
 
         public bool OnRawInterval(float interval, float offset)
         {
-            return Math.Floor((RawTimeActive - offset - Engine.RawDeltaTime) / interval) < Math.Floor((RawTimeActive - offset) / interval);
+            return Math.Floor((RawTimeActive - offset - Engine.Instance.RawDeltaTime) / interval) < Math.Floor((RawTimeActive - offset) / interval);
         }
 
         public bool BetweenRawInterval(float interval)

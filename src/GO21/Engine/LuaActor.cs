@@ -16,7 +16,7 @@ namespace GO21Engine
 
             State = new Lua();
             State.LoadCLRPackage();
-            //State["E"] = Engine.Instance;
+            State["EI"] = Engine.Instance;
             State.DoString(script);
         }
 

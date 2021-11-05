@@ -1447,7 +1447,7 @@ namespace GO21Engine.Util
 
         public static bool ContentXMLExists(string filename)
         {
-            return File.Exists(Path.Combine(Engine.ContentDirectory, filename));
+            return File.Exists(Path.Combine(Engine.Instance.ContentDirectory, filename));
         }
 
         public static bool XMLExists(string filename)
@@ -2018,7 +2018,7 @@ namespace GO21Engine.Util
 
         public static void TimeLog()
         {
-            Debug.WriteLine(Engine.Scene.RawTimeActive);
+            Debug.WriteLine(Engine.Instance.Scene.RawTimeActive);
         }
 
         public static void Log(params object[] obj)
@@ -2034,7 +2034,7 @@ namespace GO21Engine.Util
 
         public static void TimeLog(object obj)
         {
-            Debug.WriteLine(Engine.Scene.RawTimeActive + " : " + obj);
+            Debug.WriteLine(Engine.Instance.Scene.RawTimeActive + " : " + obj);
         }
 
         public static void LogEach<T>(IEnumerable<T> collection)
