@@ -24,38 +24,38 @@ namespace GO21Engine
         /// <summary>
         /// The GraphicsDeviceManager for the game.
         /// </summary>
-        public static GraphicsDeviceManager Graphics;
+        public GraphicsDeviceManager Graphics;
         /// <summary>
         /// The Drawing subsystem for textures and primitives.
         /// </summary>
-        public static Drawing Drawing;
+        public Drawing Drawing;
         /// <summary>
         /// The Camera to render the game through.
         /// </summary>
-        public static Camera Camera;
+        public Camera Camera;
 
         // == Window ==
 
         /// <summary>
         /// The internal width of the game.
         /// </summary>
-        public static int Width;
+        public int Width;
         /// <summary>
         /// The internal height of the game.
         /// </summary>
-        public static int Height;
+        public int Height;
         /// <summary>
         /// The window title of the game.
         /// </summary>
-        public static string Title;
+        public string Title;
         /// <summary>
         /// The amount to scale the internal window by.
         /// </summary>
-        public static int Scale;
+        public int Scale;
         /// <summary>
         /// How wide the internal "screen" should be when rendered.
         /// </summary>
-        public static int ScreenWidth
+        public int ScreenWidth
         {
             get
             {
@@ -72,7 +72,7 @@ namespace GO21Engine
         /// <summary>
         /// How tall the internal "screen" should be when rendered.
         /// </summary>
-        public static int ScreenHeight
+        public int ScreenHeight
         {
             get
             {
@@ -89,7 +89,7 @@ namespace GO21Engine
         /// <summary>
         /// Get the actual width of the window.
         /// </summary>
-        public static int WindowWidth
+        public int WindowWidth
         {
             get
             {
@@ -99,7 +99,7 @@ namespace GO21Engine
         /// <summary>
         /// Get the height of the window.
         /// </summary>
-        public static int WindowHeight
+        public int WindowHeight
         {
             get
             {
@@ -112,34 +112,34 @@ namespace GO21Engine
         /// <summary>
         /// The time since the last frame, including a time scaling feature.
         /// </summary>
-        public static float DeltaTime { get; private set; }
+        public float DeltaTime { get; private set; }
         /// <summary>
         /// The time since the last frame WITHOUT the time scaling.
         /// </summary>
-        public static float RawDeltaTime { get; private set; }
+        public float RawDeltaTime { get; private set; }
         /// <summary>
         /// The amount to speed up/slow down time.
         /// </summary>
-        public static float TimeRate = 1f;
+        public float TimeRate = 1f;
         /// <summary>
         /// If this value is greater than zero, the game will pause and count down this timer.
         /// </summary>
-        public static float FreezeTimer;
+        public float FreezeTimer;
         /// <summary>
         /// Total count of frames 
         /// </summary>
-        public static int Frames { get; private set; }
+        public int Frames { get; private set; }
 
         // == Content ==
 
         /// <summary>
         /// The directory that the executable is located in.
         /// </summary>
-        private static string AssemblyDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+        private string AssemblyDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
         /// <summary>
         /// The directory that the Content for the game is located in.
         /// </summary>
-        public static string ContentDirectory
+        public string ContentDirectory
         {
             get { return Path.Combine(AssemblyDirectory, Instance.Content.RootDirectory); }
         }
@@ -149,7 +149,7 @@ namespace GO21Engine
         /// <summary>
         /// The color to clear the screen with.
         /// </summary>
-        public static Color ClearColor;
+        public Color ClearColor;
         /// <summary>
         /// Kill the game on ESC?
         /// </summary>
@@ -158,10 +158,10 @@ namespace GO21Engine
         // == Scene ==
 
         // The current scene.
-        private static Scene _scene;
+        private Scene _scene;
         // The scene to change to at the end of the frame.
-        private static Scene _nextScene;
-        public static Scene Scene
+        private Scene _nextScene;
+        public Scene Scene
         {
             get
             {
@@ -328,7 +328,7 @@ namespace GO21Engine
         /// <typeparam name="T">The type of asset to load.</typeparam>
         /// <param name="assetName">The name of the asset (no extension) to load.</param>
         /// <returns>The loaded asset.</returns>
-        public static T Load<T>(string assetName)
+        public T Load<T>(string assetName)
         {
             return Instance.Content.Load<T>(assetName);
         }
@@ -338,7 +338,7 @@ namespace GO21Engine
         /// </summary>
         /// <param name="texName">The name of the Texture2D to load (no extension).</param>
         /// <returns>The Texture2D.</returns>
-        public static Texture2D LoadTex(string texName)
+        public Texture2D LoadTex(string texName)
         {
             return Load<Texture2D>(texName);
         }
@@ -348,7 +348,7 @@ namespace GO21Engine
         /// </summary>
         /// <param name="scriptName">The path to the lua script (no extension).</param>
         /// <returns>The LuaScript structure that contains the lua code.</returns>
-        public static LuaPipeline.LuaScript LoadLua(string scriptName)
+        public LuaPipeline.LuaScript LoadLua(string scriptName)
         {
             return Instance.Content.Load<LuaPipeline.LuaScript>(scriptName);
         }
