@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.Xna.Framework;
 using NLua;
 
 namespace GO21Engine
@@ -15,7 +16,10 @@ namespace GO21Engine
         {
             State = new Lua();
             State.LoadCLRPackage();
+
+            State["API"] = this;
             State["EI"] = Engine.I;
+
             State.DoString(script);
         }
 
@@ -38,6 +42,8 @@ namespace GO21Engine
             else
                 return null;
         }
+
+        #region Events
 
         public override void BeforeUpdate()
         {
@@ -101,5 +107,16 @@ namespace GO21Engine
 
             base.SceneEnd();
         }
+
+        #endregion
+
+        #region Lua API
+
+        public Vector2 Vector2(float x, float y)
+        {
+            return new Vector2(x, y);
+        }
+
+        #endregion
     }
 }
