@@ -13,10 +13,9 @@ namespace GO21Engine
 
         public LuaActor(string script)
         {
-
             State = new Lua();
             State.LoadCLRPackage();
-            State["EI"] = Engine.Instance;
+            State["EI"] = Engine.I;
             State.DoString(script);
         }
 

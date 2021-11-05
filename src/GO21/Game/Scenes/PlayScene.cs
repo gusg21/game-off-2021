@@ -13,16 +13,16 @@ namespace Game.Scenes
         public override void SceneBegin()
         {
             //_penguin = Engine.LoadTex("penguin");
-            _windowCorners = Engine.Instance.LoadTex("windowcorners");
+            _windowCorners = Engine.I.LoadTex("windowcorners");
 
-            Add(new LuaActor(Engine.Instance.LoadLua("scripts/test")));
+            Add(new LuaActor(Engine.I.LoadLua("scripts/test")));
 
             base.SceneBegin();
         }
 
         public override void Update()
         {
-            Engine.Instance.Camera.Approach(new Vector2(0, 0), 0.01f);
+            Engine.I.Camera.Approach(new Vector2(0, 0), 0.01f);
 
             base.Update();
         }
@@ -30,7 +30,7 @@ namespace Game.Scenes
         public override void Draw()
         {
             //Engine.Drawing.Texture(_penguin, 0, 0);
-            Engine.Instance.Drawing.Texture(_windowCorners, 0, 0);
+            Engine.I.Drawing.Texture(_windowCorners, 0, 0);
 
             base.Draw();
         }

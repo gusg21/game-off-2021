@@ -20,8 +20,8 @@ namespace GO21Engine.Util
         public Camera()
         {
             Viewport = new Viewport();
-            Viewport.Width = Engine.Instance.Width;
-            Viewport.Height = Engine.Instance.Height;
+            Viewport.Width = Engine.I.Width;
+            Viewport.Height = Engine.I.Height;
             UpdateMatrices();
         }
 

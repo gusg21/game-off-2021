@@ -72,10 +72,10 @@ namespace GO21Engine.Util
             {
                 // Draw the internal screen centered in the window.
                 SpriteBatch.Draw(InternalScreen, new Rectangle(
-                    Engine.Instance.WindowWidth / 2 - Engine.Instance.ScreenWidth / 2,
-                    Engine.Instance.WindowHeight / 2 - Engine.Instance.ScreenHeight / 2,
-                    Engine.Instance.ScreenWidth,
-                    Engine.Instance.ScreenHeight
+                    Engine.I.WindowWidth / 2 - Engine.I.ScreenWidth / 2,
+                    Engine.I.WindowHeight / 2 - Engine.I.ScreenHeight / 2,
+                    Engine.I.ScreenWidth,
+                    Engine.I.ScreenHeight
                 ), Color.White);
             }
             SpriteBatch.End();

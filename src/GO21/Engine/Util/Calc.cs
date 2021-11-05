@@ -1433,7 +1433,7 @@ namespace GO21Engine.Util
         public static XmlDocument LoadContentXML(string filename)
         {
             XmlDocument xml = new XmlDocument();
-            xml.Load(TitleContainer.OpenStream(Path.Combine(Engine.Instance.Content.RootDirectory, filename)));
+            xml.Load(TitleContainer.OpenStream(Path.Combine(Engine.I.Content.RootDirectory, filename)));
             return xml;
         }
 
@@ -1447,7 +1447,7 @@ namespace GO21Engine.Util
 
         public static bool ContentXMLExists(string filename)
         {
-            return File.Exists(Path.Combine(Engine.Instance.ContentDirectory, filename));
+            return File.Exists(Path.Combine(Engine.I.ContentDirectory, filename));
         }
 
         public static bool XMLExists(string filename)
@@ -2018,7 +2018,7 @@ namespace GO21Engine.Util
 
         public static void TimeLog()
         {
-            Debug.WriteLine(Engine.Instance.Scene.RawTimeActive);
+            Debug.WriteLine(Engine.I.Scene.RawTimeActive);
         }
 
         public static void Log(params object[] obj)
@@ -2034,7 +2034,7 @@ namespace GO21Engine.Util
 
         public static void TimeLog(object obj)
         {
-            Debug.WriteLine(Engine.Instance.Scene.RawTimeActive + " : " + obj);
+            Debug.WriteLine(Engine.I.Scene.RawTimeActive + " : " + obj);
         }
 
         public static void LogEach<T>(IEnumerable<T> collection)

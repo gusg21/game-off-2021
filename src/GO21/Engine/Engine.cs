@@ -20,7 +20,7 @@ namespace GO21Engine
         /// <summary>
         /// Singleton object.
         /// </summary>
-        public static Engine Instance;
+        public static Engine I;
         /// <summary>
         /// The GraphicsDeviceManager for the game.
         /// </summary>
@@ -93,7 +93,7 @@ namespace GO21Engine
         {
             get
             {
-                return Instance.GraphicsDevice.PresentationParameters.BackBufferWidth;
+                return I.GraphicsDevice.PresentationParameters.BackBufferWidth;
             }
         }
         /// <summary>
@@ -103,7 +103,7 @@ namespace GO21Engine
         {
             get
             {
-                return Instance.GraphicsDevice.PresentationParameters.BackBufferHeight;
+                return I.GraphicsDevice.PresentationParameters.BackBufferHeight;
             }
         }
 
@@ -141,7 +141,7 @@ namespace GO21Engine
         /// </summary>
         public string ContentDirectory
         {
-            get { return Path.Combine(AssemblyDirectory, Instance.Content.RootDirectory); }
+            get { return Path.Combine(AssemblyDirectory, I.Content.RootDirectory); }
         }
 
         // == Util ==
@@ -184,7 +184,7 @@ namespace GO21Engine
         public Engine(int width, int height, int scale, string title)
         {
             // Set up singleton
-            Instance = this;
+            I = this;
 
             // Apply parameters
             Width = width;
@@ -330,7 +330,7 @@ namespace GO21Engine
         /// <returns>The loaded asset.</returns>
         public T Load<T>(string assetName)
         {
-            return Instance.Content.Load<T>(assetName);
+            return I.Content.Load<T>(assetName);
         }
 
         /// <summary>
@@ -350,7 +350,7 @@ namespace GO21Engine
         /// <returns>The LuaScript structure that contains the lua code.</returns>
         public LuaPipeline.LuaScript LoadLua(string scriptName)
         {
-            return Instance.Content.Load<LuaPipeline.LuaScript>(scriptName);
+            return I.Content.Load<LuaPipeline.LuaScript>(scriptName);
         }
 
         #endregion
