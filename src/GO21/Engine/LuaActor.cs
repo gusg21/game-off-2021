@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using NLua;
 
 namespace GO21Engine
@@ -24,80 +25,80 @@ namespace GO21Engine
         public object CallFunction(string name, params object[] parameters)
         {
             LuaFunction function = State[name] as LuaFunction;
-            return function.Call(parameters)[0];
-        }
 
-        public object TryCallFunction(string name, params object[] parameters)
-        {
-            try
+            if (function == null)
             {
-                return CallFunction(name, parameters);
-            }
-            catch (Exception)
-            {
+                Console.WriteLine($"Failed to call function {name}.");
                 return null;
             }
+
+            object[] results = function.Call(parameters);
+
+            if (results.Count() > 0)
+                return results[0];
+            else
+                return null;
         }
 
         public override void BeforeUpdate()
         {
-            TryCallFunction("BeforeUpdate");
+            CallFunction("BeforeUpdate");
 
             base.BeforeUpdate();
         }
 
         public override void Update()
         {
-            TryCallFunction("Update");
+            CallFunction("Update");
 
             base.Update();
         }
 
         public override void AfterUpdate()
         {
-            TryCallFunction("AfterUpdate");
+            CallFunction("AfterUpdate");
 
             base.AfterUpdate();
         }
 
         public override void BeforeDraw()
         {
-            TryCallFunction("BeforeDraw");
+            CallFunction("BeforeDraw");
 
             base.BeforeDraw();
         }
 
         public override void Draw()
         {
-            TryCallFunction("Draw");
+            CallFunction("Draw");
 
             base.Draw();
         }
 
         public override void AfterDraw()
         {
-            TryCallFunction("AfterDraw");
+            CallFunction("AfterDraw");
 
             base.AfterDraw();
         }
 
         public override void OnAdded(ActorList list)
         {
-            TryCallFunction("OnAdded", list);
+            CallFunction("OnAdded", list);
 
             base.OnAdded(list);
         }
 
         public override void SceneBegin()
         {
-            TryCallFunction("SceneBegin");
+            CallFunction("SceneBegin");
 
             base.SceneBegin();
         }
 
         public override void SceneEnd()
         {
-            TryCallFunction("SceneEnd");
+            CallFunction("SceneEnd");
 
             base.SceneEnd();
         }

@@ -1,4 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/Users/gus/Projects/game-off-2021/src/GO21/Game/Content/penguin.png","/Users/gus/Projects/game-off-2021/src/GO21/Game/Content/bin/DesktopGL/Content/penguin.xnb","TextureProcessor","Texture2DContent",233,1109,0.594015
-"/Users/gus/Projects/game-off-2021/src/GO21/Game/Content/scripts/test.lua","/Users/gus/Projects/game-off-2021/src/GO21/Game/Content/bin/DesktopGL/Content/scripts/test.xnb","LuaProcessor","LuaScript",199,413,0.100376
-"/Users/gus/Projects/game-off-2021/src/GO21/Game/Content/windowcorners.png","/Users/gus/Projects/game-off-2021/src/GO21/Game/Content/bin/DesktopGL/Content/windowcorners.xnb","TextureProcessor","Texture2DContent",713,307285,0.175761
+"C:/Users/angus.goucher/Documents/game-off-2021/src/GO21/Game/Content/scripts/test.lua","C:/Users/angus.goucher/Documents/game-off-2021/src/GO21/Game/Content/bin/DesktopGL/Content/scripts/test.xnb","LuaProcessor","LuaScript",142,356,0.0760539

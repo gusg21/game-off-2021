@@ -1,12 +1,7 @@
-import("GO21Engine.Engine")
-
-print("TEST.LUA =")
-
-function OnAdded(list)
-    tex = Engine.LoadTex("penguin")
-    print("tex: " .. tex)
-end
+Engine = import("GO21Engine.Engine")
 
 function Draw()
-    Engine.Drawing.Texture(tex, 10, 10)
+    print("draw")
+    print(Engine)
+    -- Engine.Drawing.Texture(tex, 10, 10)
 end
