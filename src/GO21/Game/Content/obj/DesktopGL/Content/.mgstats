@@ -1,2 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/angus.goucher/Documents/game-off-2021/src/GO21/Game/Content/scripts/test.lua","C:/Users/angus.goucher/Documents/game-off-2021/src/GO21/Game/Content/bin/DesktopGL/Content/scripts/test.xnb","LuaProcessor","LuaScript",251,465,0.0765182
+"/Users/gus/Projects/game-off-2021/src/GO21/Game/Content/scripts/test.lua","/Users/gus/Projects/game-off-2021/src/GO21/Game/Content/bin/DesktopGL/Content/scripts/test.xnb","LuaProcessor","LuaScript",90,303,0.105109
