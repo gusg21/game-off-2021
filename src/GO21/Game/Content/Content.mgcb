@@ -10,6 +10,7 @@
 
 #-------------------------------- References --------------------------------#
 
+/reference:../../LuaPipeline/bin/Debug/netstandard2.0/LuaPipeline.dll
 
 #---------------------------------- Content ---------------------------------#
 
@@ -24,6 +25,11 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:penguin.png
+
+#begin scripts/test.lua
+/importer:LuaImporter
+/processor:LuaProcessor
+/build:scripts/test.lua
 
 #begin windowcorners.png
 /importer:TextureImporter

@@ -22,10 +22,25 @@ namespace GO21Engine
 
         // == Attributes ==
 
+        // DO NOT USE; The raw z-index.
+        private int _depth;
+
         /// <summary>
         /// The Z-index of the actor, or its simulated distance from the camera.
         /// </summary>
-        public int Depth;
+        public int Depth
+        {
+            get
+            {
+                return _depth;
+            }
+            set
+            {
+                // Require re-sort whenever the depth changes
+                _depth = value;
+                List.ReSort();
+            }
+        }
         /// <summary>
         /// The position of the actor.
         /// </summary>
@@ -58,6 +73,24 @@ namespace GO21Engine
                 Position.Y = value;
             }
         }
+
+        // == References ==
+
+        /// <summary>
+        /// The ActorList that contains this Actor.
+        /// </summary>
+        public ActorList List { get; private set; }
+        /// <summary>
+        /// The Scene that contains the ActorList that contains this Actor.
+        /// </summary>
+        public Scene Scene
+        {
+            get
+            {
+                return List.Scene;
+            }
+        }
+
 
         /// <summary>
         /// Create a new actor.
@@ -105,6 +138,15 @@ namespace GO21Engine
         /// Happens just after <see cref="Draw"/>.
         /// </summary>
         public virtual void AfterDraw() { }
+
+        /// <summary>
+        /// Called when this Actor is added to a list.
+        /// </summary>
+        /// <param name="list">The ActorList this Actor was added to.</param>
+        public virtual void OnAdded(ActorList list)
+        {
+            List = list;
+        }
 
         #endregion
     }

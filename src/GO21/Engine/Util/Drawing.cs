@@ -9,17 +9,21 @@ namespace GO21Engine.Util
         /// <summary>
         /// The SpriteBatch to draw to.
         /// </summary>
-        public static SpriteBatch SpriteBatch { get; private set; }
+        public SpriteBatch SpriteBatch { get; private set; }
         /// <summary>
         /// The Graphics Device for the Game.
         /// </summary>
         /// <param name="device"></param>
-        public static GraphicsDevice Device { get; private set; }
+        public GraphicsDevice Device { get; private set; }
         /// <summary>
         /// The internal, low-res screen to render to. This is then rendered to
         /// the window itself for perfect pixel art beauty.
         /// </summary>
-        public static RenderTarget2D InternalScreen;
+        public RenderTarget2D InternalScreen { get; private set; }
+        /// <summary>
+        /// The clear color for the internal screen.
+        /// </summary>
+        public Color ClearColor;
 
         public Drawing(GraphicsDevice device, int screenWidth, int screenHeight)
         {
@@ -52,6 +56,7 @@ namespace GO21Engine.Util
         public void Begin(Matrix transform)
         {
             Device.SetRenderTarget(InternalScreen);
+            Device.Clear(ClearColor);
             SpriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: transform);
         }
 

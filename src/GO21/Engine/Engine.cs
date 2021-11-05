@@ -193,7 +193,8 @@ namespace GO21Engine
             Title = Window.Title = title;
 
             // Camera
-            Camera = new Camera();
+            Camera = new Camera(Width, Height);
+            Camera.CenterOrigin();
 
             // Content
             Content.RootDirectory = "Content";
@@ -298,9 +299,6 @@ namespace GO21Engine
             if (_scene != null)
                 _scene.BeforeDraw();
 
-            GraphicsDevice.SetRenderTarget(null); // render to window
-            GraphicsDevice.Clear(ClearColor);
-
             Drawing.Begin(Camera.Matrix);
 
             if (_scene != null)
@@ -322,7 +320,7 @@ namespace GO21Engine
 
         #endregion
 
-        #region Shortcuts
+        #region Content
 
         /// <summary>
         /// A shortcut to Engine.Instance.Content.LoadContent<T>().
@@ -343,6 +341,16 @@ namespace GO21Engine
         public static Texture2D LoadTex(string texName)
         {
             return Load<Texture2D>(texName);
+        }
+
+        /// <summary>
+        /// Load a lua acript from a given file.
+        /// </summary>
+        /// <param name="scriptName">The path to the lua script (no extension).</param>
+        /// <returns>The LuaScript structure that contains the lua code.</returns>
+        public static LuaPipeline.LuaScript LoadLua(string scriptName)
+        {
+            return Instance.Content.Load<LuaPipeline.LuaScript>(scriptName);
         }
 
         #endregion

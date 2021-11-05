@@ -7,11 +7,16 @@
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="NLua" Version="1.5.11" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Util\" />
+    <None Remove="NLua" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Util\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LuaPipeline\LuaPipeline.csproj" />
   </ItemGroup>
 </Project>

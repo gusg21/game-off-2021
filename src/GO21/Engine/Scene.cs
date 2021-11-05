@@ -1,11 +1,14 @@
 ﻿using System;
 using GO21Engine.Util;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 
 namespace GO21Engine
 {
     public class Scene
     {
+        // == Flags ==
+
         /// <summary>
         /// Is the scene paused?
         /// </summary>
@@ -14,6 +17,9 @@ namespace GO21Engine
         /// Is the scene currently in focus?
         /// </summary>
         public bool Focused { get; private set; }
+
+        // == Time ==
+
         /// <summary>
         /// The time that this scene has been active, with pausing taken into account.
         /// </summary>
@@ -23,10 +29,22 @@ namespace GO21Engine
         /// </summary>
         public float RawTimeActive { get; private set; }
 
+        // == Actors ==
+
         /// <summary>
         /// The list of actors in the scene.
         /// </summary>
         public ActorList Actors { get; private set; }
+
+        // == Shortcuts ==
+
+        public ContentManager Content
+        {
+            get
+            {
+                return Engine.Instance.Content;
+            }
+        }
         
         public Scene()
         {
@@ -127,6 +145,28 @@ namespace GO21Engine
         public bool BetweenRawInterval(float interval)
         {
             return Calc.BetweenInterval(RawTimeActive, interval);
+        }
+
+        #endregion
+
+        #region Shortcuts
+
+        /// <summary>
+        /// Adds an Actor to the scene. Shortcut for Scene.Actors.Add().
+        /// </summary>
+        /// <param name="actor">The Actor to add to the scene.</param>
+        public void Add(Actor actor)
+        {
+            Actors.Add(actor);
+        }
+
+        /// <summary>
+        /// Adds multiple Actors to the scene. Shortcut for Scene.Actors.Add().
+        /// </summary>
+        /// <param name="actors">The Actors to add to the scene.</param>
+        public void Add(params Actor[] actors)
+        {
+            Actors.Add(actors);
         }
 
         #endregion
