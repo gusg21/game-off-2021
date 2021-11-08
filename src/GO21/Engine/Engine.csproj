@@ -20,6 +20,7 @@
     <Folder Include="Components\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\monogame-aseprite\source\MonoGame.Aseprite\MonoGame.Aseprite.csproj" />
+    <ProjectReference Include="..\LuaPipeline\LuaPipeline.csproj" />
+    <ProjectReference Include="..\AsepritePipeline\AsepritePipeline.csproj" />
   </ItemGroup>
 </Project>

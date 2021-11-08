@@ -54,7 +54,7 @@ namespace AsepritePipeline
 
     public class AsepriteRectangle
     {
-        int x, y, w, h;
+        public int x, y, w, h;
     }
 
     public class AsepriteDimensions

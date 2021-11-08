@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pipelines", "Pipelines", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsepritePipeline", "AsepritePipeline\AsepritePipeline.csproj", "{B30D9142-B24E-4DE0-86E3-A84F70429683}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipelineTesting", "PipelineTesting\PipelineTesting.csproj", "{5A0F41A5-4B9F-451F-88E3-AF092D091A3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,14 @@ Global
 		{B30D9142-B24E-4DE0-86E3-A84F70429683}.Debug|x86.Build.0 = Debug|Any CPU
 		{B30D9142-B24E-4DE0-86E3-A84F70429683}.Release|x86.ActiveCfg = Release|Any CPU
 		{B30D9142-B24E-4DE0-86E3-A84F70429683}.Release|x86.Build.0 = Release|Any CPU
+		{5A0F41A5-4B9F-451F-88E3-AF092D091A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A0F41A5-4B9F-451F-88E3-AF092D091A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A0F41A5-4B9F-451F-88E3-AF092D091A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A0F41A5-4B9F-451F-88E3-AF092D091A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A0F41A5-4B9F-451F-88E3-AF092D091A3C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5A0F41A5-4B9F-451F-88E3-AF092D091A3C}.Debug|x86.Build.0 = Debug|Any CPU
+		{5A0F41A5-4B9F-451F-88E3-AF092D091A3C}.Release|x86.ActiveCfg = Release|Any CPU
+		{5A0F41A5-4B9F-451F-88E3-AF092D091A3C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,5 +73,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{66144854-3E8B-4ED5-9ABC-EF8F6C538739} = {9B3788B0-1486-421D-B8DA-78E685A744BE}
 		{B30D9142-B24E-4DE0-86E3-A84F70429683} = {9B3788B0-1486-421D-B8DA-78E685A744BE}
+		{5A0F41A5-4B9F-451F-88E3-AF092D091A3C} = {9B3788B0-1486-421D-B8DA-78E685A744BE}
 	EndGlobalSection
 EndGlobal

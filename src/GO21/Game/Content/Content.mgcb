@@ -11,28 +11,26 @@
 #-------------------------------- References --------------------------------#
 
 /reference:../../LuaPipeline/bin/Debug/netstandard2.0/LuaPipeline.dll
-/reference:../../../monogame-aseprite/source/MonoGame.Aseprite.ContentPipeline/bin/Debug/netstandard2.0/MonoGame.Aseprite.ContentPipeline.dll
+/reference:../../AsepritePipeline/bin/Debug/netstandard2.0/AsepritePipeline.dll
 
 #---------------------------------- Content ---------------------------------#
 
-#begin penguin.ase
-/importer:OpenAssetImporter
-/processor:ModelProcessor
-/processorParam:ColorKeyColor=0,0,0,0
+#begin penguin.json
+/importer:AsepriteImporter
+/processor:AsepriteProcessor
+/build:penguin.json
+
+#begin penguin.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
 /processorParam:ColorKeyEnabled=True
-/processorParam:DefaultEffect=BasicEffect
-/processorParam:GenerateMipmaps=True
-/processorParam:GenerateTangentFrames=False
-/processorParam:PremultiplyTextureAlpha=True
-/processorParam:PremultiplyVertexColors=True
-/processorParam:ResizeTexturesToPowerOfTwo=False
-/processorParam:RotationX=0
-/processorParam:RotationY=0
-/processorParam:RotationZ=0
-/processorParam:Scale=1
-/processorParam:SwapWindingOrder=False
-/processorParam:TextureFormat=Compressed
-/build:penguin.ase
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:penguin.png
 
 #begin scripts/test.lua
 /importer:LuaImporter
@@ -40,14 +38,14 @@
 /build:scripts/test.lua
 
 #begin windowcorners.png
-/importer:AsepriteDocumentImporter
-/processor:AsepriteDocumentProcessor
-/processorParam:SheetType=Packed
-/processorParam:MergeDuplicateFrames=True
-/processorParam:IgnoreEmptyFrames=True
-/processorParam:OnlyVisibleLayers=True
-/processorParam:BorderPadding=0
-/processorParam:Spacing=0
-/processorParam:InnerPadding=0
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
 /build:windowcorners.png
 

@@ -1,16 +1,16 @@
 ﻿using Microsoft.Xna.Framework.Content.Pipeline;
 
 using TInput = AsepritePipeline.AsepriteJSON;
-using TOutput = System.String;
+using TOutput = AsepritePipeline.AsepriteJSON;
 
 namespace AsepritePipeline
 {
-    [ContentProcessor(DisplayName = "Processor1")]
-    class Processor1 : ContentProcessor<TInput, TOutput>
+    [ContentProcessor(DisplayName = "* Aseprite Processor")]
+    class AsepriteProcessor : ContentProcessor<TInput, TOutput>
     {
         public override TOutput Process(TInput input, ContentProcessorContext context)
         {
-            return default(TOutput);
+            return input;
         }
     }
 }

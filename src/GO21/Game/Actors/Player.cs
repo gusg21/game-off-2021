@@ -1,7 +1,7 @@
 ﻿using System;
 using GO21Engine;
 using GO21Engine.Components;
-using MonoGame.Aseprite.Documents;
+//using MonoGame.Aseprite.Documents;
 
 namespace Game.Actors
 {
@@ -9,7 +9,7 @@ namespace Game.Actors
     {
         public Player()
         {
-            Add(new CAseprite(Engine.I.Content.Load<AsepriteDocument>("penguin")));
+            //Add(new CAseprite(Engine.I.Content.Load<AsepriteDocument>("penguin")));
         }
     }
 }
