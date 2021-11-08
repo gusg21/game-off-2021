@@ -91,11 +91,19 @@ namespace GO21Engine
             }
         }
 
+        /// <summary>
+        /// Create a new Actor at the given position.
+        /// </summary>
+        /// <param name="position"></param>
+        public Actor(Vector2 position)
+        {
+            Position = position;
+        }
 
         /// <summary>
         /// Create a new actor.
         /// </summary>
-        public Actor() { }
+        public Actor() : this(Vector2.Zero) { }
 
         #region Events
 

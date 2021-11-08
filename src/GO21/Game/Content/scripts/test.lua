@@ -8,7 +8,7 @@ function Update()
         x = x + 1
     end
 
-    EI.Camera:Approach(API:Vector2(x + 4, y + 4), 1)
+    EI.Camera:Approach(this:Vector2(x + 4, y + 4), 1)
 end
 
 function Draw()

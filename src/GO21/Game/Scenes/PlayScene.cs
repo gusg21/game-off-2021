@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Actors;
 using GO21Engine;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -15,7 +16,7 @@ namespace Game.Scenes
             //_penguin = Engine.LoadTex("penguin");
             _windowCorners = Engine.I.LoadTex("windowcorners");
 
-            Add(new LuaActor(Engine.I.LoadLua("scripts/test")));
+            Add(new Player());
 
             base.SceneBegin();
         }

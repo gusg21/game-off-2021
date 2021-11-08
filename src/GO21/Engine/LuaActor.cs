@@ -17,7 +17,7 @@ namespace GO21Engine
             State = new Lua();
             State.LoadCLRPackage();
 
-            State["API"] = this;
+            State["this"] = this;
             State["EI"] = Engine.I;
 
             State.DoString(script);
@@ -110,13 +110,9 @@ namespace GO21Engine
 
         #endregion
 
-        #region Lua API
-
         public Vector2 Vector2(float x, float y)
         {
             return new Vector2(x, y);
         }
-
-        #endregion
     }
 }

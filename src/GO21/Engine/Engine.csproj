@@ -12,11 +12,14 @@
   <ItemGroup>
     <None Remove="Util\" />
     <None Remove="NLua" />
+    <None Remove="Components\" />
+    <None Remove="MonoGame.Aseprite" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Util\" />
+    <Folder Include="Components\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LuaPipeline\LuaPipeline.csproj" />
+    <ProjectReference Include="..\..\monogame-aseprite\source\MonoGame.Aseprite\MonoGame.Aseprite.csproj" />
   </ItemGroup>
 </Project>

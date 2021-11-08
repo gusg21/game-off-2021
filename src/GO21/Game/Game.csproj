@@ -13,6 +13,7 @@
     <None Remove="Icon.ico" />
     <None Remove="Icon.bmp" />
     <None Remove="Scenes\" />
+    <None Remove="Actors\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
@@ -33,5 +34,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scenes\" />
+    <Folder Include="Actors\" />
   </ItemGroup>
 </Project>

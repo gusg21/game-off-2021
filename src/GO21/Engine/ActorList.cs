@@ -53,7 +53,8 @@ namespace GO21Engine
         public void Update()
         {
             foreach (var actor in _actors)
-                actor.Update();
+                if (actor.Active)
+                    actor.Update();
         }
 
         /// <summary>
@@ -62,7 +63,8 @@ namespace GO21Engine
         public void Draw()
         {
             foreach (var actor in _actors)
-                actor.Draw();
+                if (actor.Visible)
+                    actor.Draw();
         }
 
         /// <summary>
