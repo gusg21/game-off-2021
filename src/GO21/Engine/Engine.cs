@@ -89,23 +89,11 @@ namespace GO21Engine
         /// <summary>
         /// Get the actual width of the window.
         /// </summary>
-        public int WindowWidth
-        {
-            get
-            {
-                return I.GraphicsDevice.PresentationParameters.BackBufferWidth;
-            }
-        }
+        public int WindowWidth => I.GraphicsDevice.PresentationParameters.BackBufferWidth;
         /// <summary>
         /// Get the height of the window.
         /// </summary>
-        public int WindowHeight
-        {
-            get
-            {
-                return I.GraphicsDevice.PresentationParameters.BackBufferHeight;
-            }
-        }
+        public int WindowHeight => I.GraphicsDevice.PresentationParameters.BackBufferHeight;
 
         // == Time ==
 
@@ -139,10 +127,7 @@ namespace GO21Engine
         /// <summary>
         /// The directory that the Content for the game is located in.
         /// </summary>
-        public string ContentDirectory
-        {
-            get { return Path.Combine(AssemblyDirectory, I.Content.RootDirectory); }
-        }
+        public string ContentDirectory => Path.Combine(AssemblyDirectory, I.Content.RootDirectory);
 
         // == Util ==
 
@@ -163,14 +148,8 @@ namespace GO21Engine
         private Scene _nextScene;
         public Scene Scene
         {
-            get
-            {
-                return _scene;
-            }
-            set
-            {
-                _nextScene = value;
-            }
+            get => _scene;
+            set => _nextScene = value;
         }
 
         /// <summary>

@@ -38,14 +38,8 @@ namespace GO21Engine
 
         // == Shortcuts ==
 
-        public ContentManager Content
-        {
-            get
-            {
-                return Engine.I.Content;
-            }
-        }
-        
+        public ContentManager Content => Engine.I.Content;
+
         public Scene()
         {
             Focused = false;

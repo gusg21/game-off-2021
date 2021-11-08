@@ -30,10 +30,7 @@ namespace GO21Engine
         /// </summary>
         public int Depth
         {
-            get
-            {
-                return _depth;
-            }
+            get => _depth;
             set
             {
                 // Require re-sort whenever the depth changes
@@ -50,28 +47,16 @@ namespace GO21Engine
         /// </summary>
         public float X
         {
-            get
-            {
-                return Position.X;
-            }
-            set
-            {
-                Position.X = value;
-            }
+            get => Position.X;
+            set => Position.X = value;
         }
         /// <summary>
         /// The Y component of the position of this Actor.
         /// </summary>
         public float Y
         {
-            get
-            {
-                return Position.Y;
-            }
-            set
-            {
-                Position.Y = value;
-            }
+            get => Position.Y;
+            set => Position.Y = value;
         }
 
         // == References ==
@@ -83,13 +68,7 @@ namespace GO21Engine
         /// <summary>
         /// The Scene that contains the ActorList that contains this Actor.
         /// </summary>
-        public Scene Scene
-        {
-            get
-            {
-                return List.Scene;
-            }
-        }
+        public Scene Scene => List.Scene;
 
         /// <summary>
         /// Create a new Actor at the given position.

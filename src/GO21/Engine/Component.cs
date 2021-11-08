@@ -10,13 +10,7 @@ namespace GO21Engine
         /// <summary>
         /// Shortcut to the scene with this component.
         /// </summary>
-        public Scene Scene
-        {
-            get
-            {
-                return Parent.Scene;
-            }
-        }
+        public Scene Scene => Parent.Scene;
 
         /// <summary>
         /// Should the Component Draw()?
