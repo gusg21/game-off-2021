@@ -8,9 +8,12 @@ namespace Game.Actors
 {
     public class Player : ComponentActor
     {
+        private CAseprite ase;
+
         public Player()
         {
-            Add(new CAseprite(Engine.I.Content.Load<AsepriteJSON>("penguin_")));
+            ase = Add(new CAseprite(Engine.I.Content.Load<AsepriteJSON>("penguin_")));
+            ase.Play("rotate");
         }
     }
 }

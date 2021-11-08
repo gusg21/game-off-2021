@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 
 namespace AsepritePipeline
 {
@@ -55,6 +56,8 @@ namespace AsepritePipeline
     public class AsepriteRectangle
     {
         public int x, y, w, h;
+
+        public Rectangle ToXnaRect() => new(x, y, w, h);
     }
 
     public class AsepriteDimensions

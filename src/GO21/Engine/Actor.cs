@@ -1,4 +1,5 @@
 ﻿using System;
+using GO21Engine.Util;
 using Microsoft.Xna.Framework;
 
 namespace GO21Engine
@@ -24,7 +25,6 @@ namespace GO21Engine
 
         // DO NOT USE; The raw z-index.
         private int _depth;
-
         /// <summary>
         /// The Z-index of the actor, or its simulated distance from the camera.
         /// </summary>
@@ -58,6 +58,10 @@ namespace GO21Engine
             get => Position.Y;
             set => Position.Y = value;
         }
+        /// <summary>
+        /// The collider for this actor. If null then this actor won't collide.
+        /// </summary>
+        public Collider Collider { get; private set; }
 
         // == References ==
 
@@ -74,10 +78,7 @@ namespace GO21Engine
         /// Create a new Actor at the given position.
         /// </summary>
         /// <param name="position"></param>
-        public Actor(Vector2 position)
-        {
-            Position = position;
-        }
+        public Actor(Vector2 position) => Position = position;
 
         /// <summary>
         /// Create a new actor.
@@ -133,6 +134,39 @@ namespace GO21Engine
         public virtual void OnAdded(ActorList list)
         {
             List = list;
+        }
+
+        #endregion
+
+        #region Collision
+
+        /// <summary>
+        /// Are we overlapping with another actor?
+        /// </summary>
+        /// <param name="other">The other actor.</param>
+        /// <returns>Do we overlap?</returns>
+        public bool Collide(Actor other) => Collider.Collide(other.Collider);
+
+        /// <summary>
+        /// Are we overlapping with another collider?
+        /// </summary>
+        /// <param name="other">The other collider.</param>
+        /// <returns>Do we overlap?</returns>
+        public bool Collide(Collider other) => Collider.Collide(other);
+
+        /// <summary>
+        /// If we move to a position, do we collide with another actor?
+        /// </summary>
+        /// <param name="other">The actor to check against.</param>
+        /// <param name="position">The position to check at.</param>
+        /// <returns></returns>
+        public bool CollideAt(Actor other, Vector2 position)
+        {
+            Collider collider = new(
+                Collider.X + position.X, Collider.Y + position.Y, Collider.W, Collider.H
+            );
+
+            return collider.Collide(other.Collider);
         }
 
         #endregion

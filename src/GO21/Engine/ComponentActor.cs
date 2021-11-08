@@ -10,21 +10,21 @@ namespace GO21Engine
         /// </summary>
         public List<Component> Components { get; internal set; }
 
-        public ComponentActor()
-        {
-            Components = new List<Component>();
-        }
+        public ComponentActor() => Components = new();
 
-        public void Add(Component component)
+        public T Add<T>(T component) where T : Component
         {
             Components.Add(component);
             component.Parent = this;
+            return component;
         }
 
-        public void Add(params Component[] components)
+        public T[] Add<T>(params T[] components)
         {
             foreach (var component in components)
                 Add(component);
+
+            return components;
         }
 
         public override void Update()

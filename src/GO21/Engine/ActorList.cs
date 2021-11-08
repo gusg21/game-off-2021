@@ -23,8 +23,8 @@ namespace GO21Engine
         /// </summary>
         public ActorList(Scene scene)
         {
-            _actors = new List<Actor>();
-            _actorsToAdd = new List<Actor>();
+            _actors = new();
+            _actorsToAdd = new();
         }
 
         #region Events
@@ -132,10 +132,7 @@ namespace GO21Engine
         /// <summary>
         /// Marks the actor list as needing a re-sort. This happens in AfterUpdate().
         /// </summary>
-        public void ReSort()
-        {
-            _unsorted = true;
-        }
+        public void ReSort() => _unsorted = true;
 
         /// <summary>
         /// Adds an Actor to the list.
