@@ -20,5 +20,12 @@ namespace GO21Engine.Components
             Sheet = Engine.I.LoadTex(Path.GetFileNameWithoutExtension(_json.meta.image));
             
         }
+
+        public override void Draw()
+        {
+            Engine.I.Drawing.DrawTex(Sheet, Vector2.Zero);
+
+            base.Draw();
+        }
     }
 }

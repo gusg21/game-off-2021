@@ -15,11 +15,11 @@ namespace GO21Engine
         /// <summary>
         /// Should the Component Draw()?
         /// </summary>
-        public bool Visible;
+        public bool Visible = true;
         /// <summary>
         /// Should the Component Update()?
         /// </summary>
-        public bool Active;
+        public bool Active = true;
 
         /// <summary>
         /// Create a component.

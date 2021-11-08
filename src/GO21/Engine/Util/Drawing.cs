@@ -89,7 +89,7 @@ namespace GO21Engine.Util
         /// <param name="tex">The texture to draw.</param>
         /// <param name="x">The x position.</param>
         /// <param name="y">The y position.</param>
-        public void Texture(Texture2D tex, float x, float y)
+        public void DrawTex(Texture2D tex, float x, float y)
         {
             SpriteBatch.Draw(tex, new Vector2(x, y), Color.White);
         }
@@ -99,7 +99,7 @@ namespace GO21Engine.Util
         /// </summary>
         /// <param name="tex">The texture to draw.</param>
         /// <param name="position">The position to draw it at.</param>
-        public void Texture(Texture2D tex, Vector2 position)
+        public void DrawTex(Texture2D tex, Vector2 position)
         {
             SpriteBatch.Draw(tex, position, Color.White);
         }
@@ -110,7 +110,7 @@ namespace GO21Engine.Util
         /// <param name="tex">The texture to draw.</param>
         /// <param name="position">The position to draw it at.</param>
         /// <param name="color">The color to apply to the texture.</param>
-        public void Texture(Texture2D tex, Vector2 position, Color color)
+        public void DrawTex(Texture2D tex, Vector2 position, Color color)
         {
             SpriteBatch.Draw(tex, position, color);
         }

@@ -31,7 +31,7 @@ namespace Game.Scenes
         public override void Draw()
         {
             //Engine.Drawing.Texture(_penguin, 0, 0);
-            Engine.I.Drawing.Texture(_windowCorners, 0, 0);
+            Engine.I.Drawing.DrawTex(_windowCorners, 0, 0);
 
             base.Draw();
         }

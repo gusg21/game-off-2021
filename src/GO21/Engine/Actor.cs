@@ -10,15 +10,15 @@ namespace GO21Engine
         /// <summary>
         /// Should the actor render?
         /// </summary>
-        public bool Visible;
+        public bool Visible = true;
         /// <summary>
         /// Should the actor update?
         /// </summary>
-        public bool Active;
+        public bool Active = true;
         /// <summary>
         /// Should the enemy be able to collide or be collided with?
         /// </summary>
-        public bool Collidable;
+        public bool Collidable = true;
 
         // == Attributes ==
 

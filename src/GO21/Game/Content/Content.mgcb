@@ -18,7 +18,7 @@
 #begin penguin.json
 /importer:AsepriteImporter
 /processor:AsepriteProcessor
-/build:penguin.json
+/build:penguin.json;penguin_.json
 
 #begin penguin.png
 /importer:TextureImporter
