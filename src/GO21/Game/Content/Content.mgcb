@@ -15,11 +15,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin penguin.json
-/importer:AsepriteImporter
-/processor:AsepriteProcessor
-/build:penguin.json;penguin_.json
-
 #begin penguin.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -31,6 +26,11 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:penguin.png
+
+#begin penguin_.json
+/importer:AsepriteImporter
+/processor:AsepriteProcessor
+/build:penguin_.json
 
 #begin scripts/test.lua
 /importer:LuaImporter

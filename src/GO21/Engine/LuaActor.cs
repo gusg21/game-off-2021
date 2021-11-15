@@ -14,7 +14,7 @@ namespace GO21Engine
 
         public LuaActor(string script)
         {
-            State = new Lua();
+            State = new();
             State.LoadCLRPackage();
 
             State["this"] = this;
@@ -112,7 +112,7 @@ namespace GO21Engine
 
         public Vector2 Vector2(float x, float y)
         {
-            return new Vector2(x, y);
+            return new(x, y);
         }
     }
 }

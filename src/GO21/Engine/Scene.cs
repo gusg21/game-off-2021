@@ -44,7 +44,7 @@ namespace GO21Engine
         {
             Focused = false;
 
-            Actors = new ActorList(this);
+            Actors = new(this);
         }
 
         #region Events
@@ -63,15 +63,9 @@ namespace GO21Engine
             Actors.SceneEnd();
         }
 
-        public virtual void Update()
-        {
-            Actors.Update();
-        }
+        public virtual void Update() => Actors.Update();
 
-        public virtual void Draw()
-        {
-            Actors.Draw();
-        }
+        public virtual void Draw() => Actors.Draw();
 
         public virtual void BeforeUpdate()
         {
@@ -82,20 +76,11 @@ namespace GO21Engine
             Actors.BeforeUpdate();
         }
 
-        public virtual void AfterUpdate()
-        {
-            Actors.AfterUpdate();
-        }
+        public virtual void AfterUpdate() => Actors.AfterUpdate();
 
-        public virtual void BeforeDraw()
-        {
-            Actors.BeforeDraw();
-        }
+        public virtual void BeforeDraw() => Actors.BeforeDraw();
 
-        public virtual void AfterDraw()
-        {
-            Actors.AfterDraw();
-        }
+        public virtual void AfterDraw() => Actors.AfterDraw();
 
         #endregion
 
@@ -121,10 +106,7 @@ namespace GO21Engine
             return Math.Floor((TimeActive - offset - Engine.I.DeltaTime) / interval) < Math.Floor((TimeActive - offset) / interval);
         }
 
-        public bool BetweenInterval(float interval)
-        {
-            return Calc.BetweenInterval(TimeActive, interval);
-        }
+        public bool BetweenInterval(float interval) => Calc.BetweenInterval(TimeActive, interval);
 
         public bool OnRawInterval(float interval)
         {
@@ -136,10 +118,7 @@ namespace GO21Engine
             return Math.Floor((RawTimeActive - offset - Engine.I.RawDeltaTime) / interval) < Math.Floor((RawTimeActive - offset) / interval);
         }
 
-        public bool BetweenRawInterval(float interval)
-        {
-            return Calc.BetweenInterval(RawTimeActive, interval);
-        }
+        public bool BetweenRawInterval(float interval) => Calc.BetweenInterval(RawTimeActive, interval);
 
         #endregion
 
@@ -149,19 +128,13 @@ namespace GO21Engine
         /// Adds an Actor to the scene. Shortcut for Scene.Actors.Add().
         /// </summary>
         /// <param name="actor">The Actor to add to the scene.</param>
-        public void Add(Actor actor)
-        {
-            Actors.Add(actor);
-        }
+        public void Add(Actor actor) => Actors.Add(actor);
 
         /// <summary>
         /// Adds multiple Actors to the scene. Shortcut for Scene.Actors.Add().
         /// </summary>
         /// <param name="actors">The Actors to add to the scene.</param>
-        public void Add(params Actor[] actors)
-        {
-            Actors.Add(actors);
-        }
+        public void Add(params Actor[] actors) => Actors.Add(actors);
 
         #endregion
     }

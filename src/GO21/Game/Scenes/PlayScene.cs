@@ -23,7 +23,7 @@ namespace Game.Scenes
 
         public override void Update()
         {
-            Engine.I.Camera.Approach(new Vector2(0, 0), 0.01f);
+            Engine.I.Camera.Approach(new(0, 0), 0.01f);
 
             base.Update();
         }

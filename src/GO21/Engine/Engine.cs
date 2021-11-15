@@ -172,14 +172,14 @@ namespace GO21Engine
             Title = Window.Title = title;
 
             // Camera
-            Camera = new Camera(Width, Height);
+            Camera = new(Width, Height);
             Camera.CenterOrigin();
 
             // Content
             Content.RootDirectory = "Content";
 
             // Graphics
-            Graphics = new GraphicsDeviceManager(this);
+            Graphics = new(this);
             {
                 Graphics.SynchronizeWithVerticalRetrace = true;
                 Graphics.PreferMultiSampling = false;
@@ -224,7 +224,7 @@ namespace GO21Engine
         protected override void Initialize()
         {
             // Drawing
-            Drawing = new Drawing(GraphicsDevice, Width, Height);
+            Drawing = new(GraphicsDevice, Width, Height);
             Drawing.Initialize();
 
             base.Initialize();
@@ -307,30 +307,21 @@ namespace GO21Engine
         /// <typeparam name="T">The type of asset to load.</typeparam>
         /// <param name="assetName">The name of the asset (no extension) to load.</param>
         /// <returns>The loaded asset.</returns>
-        public T Load<T>(string assetName)
-        {
-            return I.Content.Load<T>(assetName);
-        }
+        public T Load<T>(string assetName) => I.Content.Load<T>(assetName);
 
         /// <summary>
         /// A shortcut for <see cref="Load{T}(string)"/> for specifically Texture2Ds.
         /// </summary>
         /// <param name="texName">The name of the Texture2D to load (no extension).</param>
         /// <returns>The Texture2D.</returns>
-        public Texture2D LoadTex(string texName)
-        {
-            return Load<Texture2D>(texName);
-        }
+        public Texture2D LoadTex(string texName) => Load<Texture2D>(texName);
 
         /// <summary>
         /// Load a lua acript from a given file.
         /// </summary>
         /// <param name="scriptName">The path to the lua script (no extension).</param>
         /// <returns>The LuaScript structure that contains the lua code.</returns>
-        public LuaPipeline.LuaScript LoadLua(string scriptName)
-        {
-            return I.Content.Load<LuaPipeline.LuaScript>(scriptName);
-        }
+        public LuaPipeline.LuaScript LoadLua(string scriptName) => I.Content.Load<LuaPipeline.LuaScript>(scriptName);
 
         #endregion
     }

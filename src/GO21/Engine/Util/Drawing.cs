@@ -115,6 +115,29 @@ namespace GO21Engine.Util
             SpriteBatch.Draw(tex, position, color);
         }
 
+        /// <summary>
+        /// Draw a piece of a texture.
+        /// </summary>
+        /// <param name="tex">The texture to draw from.</param>
+        /// <param name="position">Where on the screen to draw to.</param>
+        /// <param name="srcRect">The piece of the texture to draw.</param>
+        public void DrawSubTex(Texture2D tex, Vector2 position, Rectangle srcRect)
+        {
+            SpriteBatch.Draw(tex, position, srcRect, Color.White);
+        }
+
+        /// <summary>
+        /// Draw a piece of a texture.
+        /// </summary>
+        /// <param name="tex">The texture to draw from.</param>
+        /// <param name="position">Where on the screen to draw to.</param>
+        /// <param name="srcRect">The piece of the texture to draw.</param>
+        /// <param name="color">The color to tint the texture with.</param>
+        public void DrawSubTex(Texture2D tex, Vector2 position, Rectangle srcRect, Color color)
+        {
+            SpriteBatch.Draw(tex, position, srcRect, color);
+        }
+
         #endregion
     }
 }
